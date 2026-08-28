@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Transfer Value Predictor - MILO</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#c5c6c9",
+                        "surface-container": "#201f1f",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-low": "#1c1b1b",
+                        "on-surface": "#e5e2e1",
+                        "outline-variant": "#44474a",
+                        "primary": "#ffffff",
+                        "surface": "#131313",
+                        "secondary": "#4ae176",
+                        "background": "#131313"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Geist"],
+                        "label-mono": ["JetBrains Mono"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style> body { min-height: max(884px, 100dvh); } </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg min-h-screen pb-16 md:pb-0 flex flex-col">
+    <!-- TopAppBar -->
+    <header class="bg-surface border-b border-outline-variant flex justify-between items-center w-full px-4 h-14 z-50 sticky top-0">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container-high transition-colors p-2 rounded">analytics</span>
+            <div class="flex items-center gap-2">
+                <img src="assets/milo_logo.png" alt="MILO Logo" class="h-8 w-auto object-contain" onerror="this.style.display='none'"/>
+                <span class="font-headline-md text-2xl font-bold tracking-tighter text-primary">MILO</span>
+            </div>
+        </div>
+        <div class="hidden md:flex gap-4">
+            <a class="text-on-surface-variant font-label-mono hover:bg-surface-container-high transition-colors p-2 rounded" href="dashboard.html">Dashboard</a>
+            <a class="text-secondary font-label-mono hover:bg-surface-container-high transition-colors p-2 rounded font-bold" href="match_predictor.html">Predictions</a>
+            <a class="text-on-surface-variant font-label-mono hover:bg-surface-container-high p-2 rounded" href="scouting.html">Scouting</a>
+            <a class="text-on-surface-variant font-label-mono hover:bg-surface-container-high transition-colors p-2 rounded" href="settings.html">Settings</a>
+        </div>
+        <div>
+            <span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container-high transition-colors p-2 rounded">account_circle</span>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto w-full p-4 md:p-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+        <section class="md:col-span-12 mb-4 border-b border-outline-variant pb-4">
+            <h1 class="text-4xl font-bold text-primary mb-2">Transfer Value Predictor</h1>
+            <p class="text-on-surface-variant">Estimate a player's real-world market value.</p>
+        </section>
+        
+        <div class="md:col-span-4 space-y-4">
+            <div class="bg-surface-container-low border border-outline-variant rounded p-4 h-64 flex flex-col justify-between">
+                <h2 class="text-2xl font-bold text-primary">Player Info Placeholder</h2>
+            </div>
+        </div>
+
+        <div class="md:col-span-8 space-y-4">
+            <div class="bg-surface-container-low border border-outline-variant rounded p-4 h-64">
+                <p>Value Trend Chart Placeholder</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- BottomNavBar (Mobile) -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-surface-container border-t border-outline-variant">
+        <a class="flex flex-col items-center justify-center text-on-surface-variant" href="dashboard.html"><span class="material-symbols-outlined">dashboard</span><span class="text-[10px]">Dashboard</span></a>
+        <a class="flex flex-col items-center justify-center text-secondary font-bold" href="match_predictor.html"><span class="material-symbols-outlined">query_stats</span><span class="text-[10px]">Predictions</span></a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant" href="scouting.html"><span class="material-symbols-outlined">search_insights</span><span class="text-[10px]">Scouting</span></a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant" href="settings.html"><span class="material-symbols-outlined">settings</span><span class="text-[10px]">Settings</span></a>
+    </nav>
+</body>
+</html>

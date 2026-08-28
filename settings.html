@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Milo Settings</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                  "on-surface-variant": "#c5c6c9",
+                  "surface-container": "#201f1f",
+                  "surface-container-high": "#2a2a2a",
+                  "surface-container-low": "#1c1b1b",
+                  "on-surface": "#e5e2e1",
+                  "outline-variant": "#44474a",
+                  "primary": "#ffffff",
+                  "surface": "#131313",
+                  "secondary": "#4ae176",
+                  "background": "#131313"
+              },
+              fontFamily: {
+                  "headline-lg": ["Geist"],
+                  "body-md": ["Geist"],
+                  "body-lg": ["Geist"],
+                  "display-lg": ["Geist"],
+                  "headline-md": ["Geist"],
+                  "label-mono": ["JetBrains Mono"]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface min-h-screen font-body-md text-body-md pb-24 md:pb-0">
+    <!-- TopAppBar -->
+    <header class="flex justify-between items-center w-full px-4 h-14 z-50 bg-surface border-b border-outline-variant sticky top-0">
+        <div class="flex items-center gap-2 cursor-pointer hover:bg-surface-container-high transition-colors p-2 rounded text-on-surface-variant">
+            <span class="material-symbols-outlined">analytics</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <img src="assets/milo_logo.png" alt="MILO Logo" class="h-8 w-auto object-contain" onerror="this.style.display='none'"/>
+            <span class="text-xl font-bold tracking-tighter text-primary">MILO</span>
+        </div>
+        <div class="flex items-center gap-2 cursor-pointer hover:bg-surface-container-high transition-colors p-2 rounded text-on-surface-variant">
+            <span class="material-symbols-outlined">account_circle</span>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 grid grid-cols-1 gap-6">
+        <h1 class="text-3xl font-bold text-primary mb-4">Development Status</h1>
+        
+        <div class="bg-surface-container-low border border-outline-variant rounded-lg p-6 shadow-lg">
+            <h2 class="text-xl font-bold text-secondary mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined">check_circle</span> What Has Been Built
+            </h2>
+            <ul class="list-disc list-inside space-y-2 text-on-surface-variant ml-2 mb-6">
+                <li>UI Scaffold for Dashboard, Match Predictor, Transfer Value, and Scouting views.</li>
+                <li>Responsive layout for web and mobile with custom Tailwind theme.</li>
+                <li>Monochrome & Premium Aesthetic definition.</li>
+            </ul>
+
+            <h2 class="text-xl font-bold text-primary mb-4 flex items-center gap-2 mt-8">
+                <span class="material-symbols-outlined">schedule</span> What Is Coming
+            </h2>
+            <ul class="list-disc list-inside space-y-2 text-on-surface-variant ml-2 mb-8">
+                <li>Prompt 1: Data Pipeline (football-data.org API + SQLite).</li>
+                <li>Prompt 2: Match Outcome Model (XGBoost classifier).</li>
+                <li>Prompt 3: Transfer Value Model (Random Forest).</li>
+                <li>Prompt 4: Player Scouting Engine (KMeans clustering).</li>
+                <li>Prompt 5: FastAPI Backend serving models.</li>
+                <li>Prompt 6: Complete Flutter Mobile App implementation.</li>
+            </ul>
+
+            <div class="border-t border-outline-variant pt-6 flex justify-end">
+                <button class="bg-secondary text-background font-bold px-6 py-2 rounded-lg hover:bg-opacity-80 transition-all flex items-center gap-2">
+                    <span class="material-symbols-outlined">rocket_launch</span> Initiate Data Pipeline Phase
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- BottomNavBar (Mobile) -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-surface-container border-t border-outline-variant">
+        <a class="flex flex-col items-center justify-center text-on-surface-variant" href="dashboard.html"><span class="material-symbols-outlined">dashboard</span><span class="text-[10px]">Dashboard</span></a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant" href="match_predictor.html"><span class="material-symbols-outlined">query_stats</span><span class="text-[10px]">Predictions</span></a>
+        <a class="flex flex-col items-center justify-center text-on-surface-variant" href="scouting.html"><span class="material-symbols-outlined">search_insights</span><span class="text-[10px]">Scouting</span></a>
+        <a class="flex flex-col items-center justify-center text-secondary font-bold" href="settings.html"><span class="material-symbols-outlined">settings</span><span class="text-[10px]">Settings</span></a>
+    </nav>
+    
+    <!-- Desktop SideNav -->
+    <nav class="hidden md:flex flex-col fixed left-0 top-14 h-[calc(100vh-3.5rem)] w-[72px] bg-surface-container border-r border-outline-variant z-40 py-6 items-center gap-6">
+        <a class="w-12 h-12 flex items-center justify-center rounded text-on-surface-variant" href="dashboard.html"><span class="material-symbols-outlined">dashboard</span></a>
+        <a class="w-12 h-12 flex items-center justify-center rounded text-on-surface-variant" href="match_predictor.html"><span class="material-symbols-outlined">query_stats</span></a>
+        <a class="w-12 h-12 flex items-center justify-center rounded text-on-surface-variant" href="scouting.html"><span class="material-symbols-outlined">search_insights</span></a>
+        <a class="w-12 h-12 flex items-center justify-center rounded text-secondary bg-surface-container-high mt-auto" href="settings.html"><span class="material-symbols-outlined">settings</span></a>
+    </nav>
+    <style>@media (min-width: 768px) { main { padding-left: 88px; } }</style>
+</body>
+</html>
