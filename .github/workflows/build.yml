@@ -5,6 +5,9 @@ on:
     branches: [ "master", "main" ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -37,8 +40,14 @@ jobs:
         working-directory: ./app
         run: flutter build apk --release
         
-      - name: Upload APK Artifact
-        uses: actions/upload-artifact@v4
+      - name: Publish to GitHub Releases
+        uses: softprops/action-gh-release@v2
         with:
-          name: milo-release-apk
-          path: app/build/app/outputs/flutter-apk/app-release.apk
+          tag_name: v0.1.0
+          name: "Milo Analytics Beta v0.1.0"
+          body: "Initial Beta Release for Milo Sports Intelligence Platform."
+          draft: false
+          prerelease: true
+          files: app/build/app/outputs/flutter-apk/app-release.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
