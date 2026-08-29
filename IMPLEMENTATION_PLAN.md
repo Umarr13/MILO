@@ -3,8 +3,8 @@
 This document outlines the step-by-step implementation plan based on the 6 prompts provided, and tracks the current progress.
 
 ## 📝 Current Status
-**Phase:** 6 - Completed
-**Next Action:** Ready for testing and review
+**Phase:** 7 - Testing & Cloud Deployment (AWS)
+**Next Action:** Begin Phase 7
 
 ---
 
@@ -77,3 +77,10 @@ This document outlines the step-by-step implementation plan based on the 6 promp
 - [x] Build Value Predictor Screen.
 - [x] Build Scouting Screen.
 - [x] Implement state management, local caching, and error handling.
+
+### [ ] Phase 7: Real-World Testing & Cloud Deployment (AWS)
+- [ ] Save the uploaded app icon to `app/assets/icon.png` and configure `flutter_launcher_icons`.
+- [ ] Connect and configure an AWS EC2 instance.
+- [ ] Containerize the FastAPI backend and ML models using Docker.
+- [ ] Configure Nginx reverse proxy and SSL on AWS.
+- [ ] Run full end-to-end integration tests using the real-world GitHub football datasets.
