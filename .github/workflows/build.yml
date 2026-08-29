@@ -23,6 +23,12 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
           
+      - name: Scaffold Android Project
+        run: |
+          flutter create --platforms android scaffold_tmp
+          mv scaffold_tmp/android app/android
+          rm -rf scaffold_tmp
+          
       - name: Install Dependencies
         working-directory: ./app
         run: flutter pub get
